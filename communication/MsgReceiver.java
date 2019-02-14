@@ -6,7 +6,7 @@ public class MsgReceiver {
 	
 	final private SerialComm port;
 	
-	public MsgReceiver(String portname) {
+	public MsgReceiver(String portname) throws SerialPortException {
 		port = new SerialComm(portname);
 	}
 
@@ -17,7 +17,7 @@ public class MsgReceiver {
 
 	}
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws SerialPortException {
 		MsgReceiver msgr = new MsgReceiver("COM4"); // Adjust this to be the right port for your machine
 		msgr.run();
 	}
